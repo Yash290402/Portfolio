@@ -27,7 +27,7 @@ import zustand from './tech/Zustand.png';
 
 import imagenie from './company/imagenie.png';
 import helpershands from './company/helpers hands.png';
-import Verbalvibes from './company/verbalvibes.png';
+import Verbalvibes from './company/Verbalvibes.png';
 import hungrito from './company/hungrito.png';
 
 import carrent from "./carrent.png";
