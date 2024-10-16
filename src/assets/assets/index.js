@@ -23,7 +23,7 @@ import threejs from "./tech/threejs.svg";
 import java from './tech/java.png';
 import c  from './tech/c.png';
 import GSAP from './tech/GSAP.png';
-import zustand from './tech/zustand.png';
+import zustand from './tech/Zustand.png';
 
 import imagenie from './company/imagenie.png';
 import helpershands from './company/helpers hands.png';
