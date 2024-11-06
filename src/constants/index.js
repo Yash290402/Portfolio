@@ -134,6 +134,7 @@ const experiences = [
             { name: "MongoDB", icon: "src/assets/assets/mongodb.svg" }
         ],
         iconBg: "#383E56",
+        icon: "src/assets/assets/company/helpers-hands.svg", // Add project logo here
         date: "April 2024 - June 2024",
         repoLink: "https://github.com/Yash290402/HelpersHand",
         points: [
@@ -148,9 +149,11 @@ const experiences = [
             { name: "Tailwind", icon: "src/assets/assets/tailwind-css.svg" },
             { name: "Firebase", icon: "src/assets/assets/firebase.svg" }
         ],
-        iconBg: "#E6DEDD",
+        icon: "src/assets/assets/helpers-hands-logo.svg", // Add project logo here
+        // iconBg: "#E6DEDD",
+        iconBg: "#383E56",
         date: "Jan 2024 - March 2024",
-        repoLink: "https://github.com/Yash290402/VerbalVibe",
+        repoLink: "src/assets/assets/company/Verbalvibes.svg",
         points: [
             "VerbalVibe is a messaging app offering smooth communication with a user-friendly interface, real-time messaging, multimedia sharing, and robust security across all platforms.",
             "Features: User-friendly interface, real-time messaging, multimedia sharing, and robust security measures.",
@@ -167,6 +170,7 @@ const experiences = [
             { name: "MongoDB", icon: "src/assets/assets/mongodb.svg" }
         ],
         iconBg: "#383E56",
+        icon: "src/assets/assets/company/imagenie.svg", // Add project logo here
         date: "Nov 2023 - December 2023",
         repoLink: "https://github.com/Yash290402/ImaGenie",
         points: [
@@ -184,7 +188,9 @@ const experiences = [
             { name: "Express.js", icon: "src/assets/assets/express-js.svg" },
             { name: "MongoDB", icon: "src/assets/assets/mongodb.svg" }
         ],
-        iconBg: "#E6DEDD",
+        // iconBg: "#E6DEDD",
+        iconBg: "#383E56",
+        icon: "src/assets/assets/company/hungrito.svg", // Add project logo here
         date: "March 2023 - July 2023",
         points: [
             "Hungrito is an innovative platform designed to revolutionize the dining experience by offering seamless online ordering and table booking services.",

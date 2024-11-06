@@ -21,6 +21,9 @@ module.exports = {
       backgroundImage: {
         "hero-pattern": "url('/src/assets/herobg.png')",
       },
+      animation: {
+        "spin-slow": "spin 20s linear infinite",
+      },
     },
   },
   plugins: [],
