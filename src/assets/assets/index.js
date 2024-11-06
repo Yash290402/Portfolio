@@ -20,9 +20,9 @@ import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
-import java from './tech/java.png';
+import java from './tech/java.svg';
 import c  from './tech/c.png';
-import GSAP from './tech/GSAP.png';
+import GSAP from './tech/GSAP.svg';
 import zustand from './tech/Zustand.png';
 
 import imagenie from './company/imagenie.png';

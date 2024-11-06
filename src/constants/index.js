@@ -22,10 +22,14 @@ import {
     Verbalvibes,
     imagenie,
     hungrito,
-    java,
+    
     c,
-    GSAP
+    java,
+    GSAP,
+    
 } from "../assets/assets";
+
+
 
 export const navLinks = [
     {
@@ -34,7 +38,7 @@ export const navLinks = [
     },
     {
         id: "work",
-        title: "Work",
+        title: "Project",
     },
     {
         id: "contact",
@@ -120,60 +124,76 @@ const technologies = [
 
 const experiences = [
     {
-        "title": "Helpers Hands",
-        "technologies": "JavaScript, React, Node, Express, Tailwind, MongoDB",
-        "icon": helpershands,
-        "iconBg": "#383E56",
-        "date": "April 2024 - June 2024",
+        title: "Helpers Hands",
+        technologies: [
+            { name: "JavaScript", icon: "src/assets/assets/js.svg" },
+            { name: "React", icon: "src/assets/assets/react-js.svg" },
+            { name: "Node.js", icon: "src/assets/assets/node.svg" },
+            { name: "Express", icon: "src/assets/assets/express-js.svg" },
+            { name: "Tailwind", icon: "src/assets/assets/tailwind-css.svg" },
+            { name: "MongoDB", icon: "src/assets/assets/mongodb.svg" }
+        ],
+        iconBg: "#383E56",
+        date: "April 2024 - June 2024",
         repoLink: "https://github.com/Yash290402/HelpersHand",
-        "points": [
+        points: [
             "Developed a responsive website used to book any required, skilled and trained, service provider by the user, at its respective selected booking slot.",
             "Features: Searching for Service providers, Booking, Selecting slots, Feedback, etc.",
-           
         ],
-       
     },
     {
-        title: "VerbalVibe",
-        technologies: "React, Tailwind, firebase as a Backend service",
-        icon: Verbalvibes,
+        title: "VerbalVibes",
+        technologies: [
+            { name: "React", icon: "src/assets/assets/react-js.svg" },
+            { name: "Tailwind", icon: "src/assets/assets/tailwind-css.svg" },
+            { name: "Firebase", icon: "src/assets/assets/firebase.svg" }
+        ],
         iconBg: "#E6DEDD",
         date: "Jan 2024 - March 2024",
         repoLink: "https://github.com/Yash290402/VerbalVibe",
         points: [
             "VerbalVibe is a messaging app offering smooth communication with a user-friendly interface, real-time messaging, multimedia sharing, and robust security across all platforms.",
-            "Features: User-friendly interface, real-time messaging, multimedia sharing, and robust security measures",
-            
+            "Features: User-friendly interface, real-time messaging, multimedia sharing, and robust security measures.",
         ],
     },
     {
         title: "ImaGenie",
-        technologies: "React, Tailwind, Javascript, Node.js, Express.js, MongoDB",
-        icon: imagenie,
+        technologies: [
+            { name: "JavaScript", icon: "src/assets/assets/js.svg" },
+            { name: "React", icon: "src/assets/assets/react-js.svg" },
+            { name: "Tailwind", icon: "src/assets/assets/tailwind-css.svg" },
+            { name: "Node.js", icon: "src/assets/assets/node.svg" },
+            { name: "Express.js", icon: "src/assets/assets/express-js.svg" },
+            { name: "MongoDB", icon: "src/assets/assets/mongodb.svg" }
+        ],
         iconBg: "#383E56",
         date: "Nov 2023 - December 2023",
         repoLink: "https://github.com/Yash290402/ImaGenie",
         points: [
-            "ImaGenie is a website that requests a prompt for an image and generates the requested image using OpenAI's API. It also features a functionality where users can share the generated images.",
-            "Features: Generating, downloading and sharing the image.",
-          
+            "ImaGenie is a website that requests a prompt for an image and generates the requested image using OpenAI's API. It also features functionality where users can share the generated images.",
+            "Features: Generating, downloading, and sharing the image.",
         ],
     },
     {
         title: "Hungrito",
-        technologies: "HTML,CSS,JavaScript,Node.js,Express.js,MongoDB",
-        icon: hungrito,
+        technologies: [
+            { name: "HTML", icon: "src/assets/assets/html.svg" },
+            { name: "CSS", icon: "src/assets/assets/css.svg" },
+            { name: "JavaScript", icon: "src/assets/assets/js.svg" },
+            { name: "Node.js", icon: "src/assets/assets/node.svg" },
+            { name: "Express.js", icon: "src/assets/assets/express-js.svg" },
+            { name: "MongoDB", icon: "src/assets/assets/mongodb.svg" }
+        ],
         iconBg: "#E6DEDD",
         date: "March 2023 - July 2023",
-       
         points: [
             "Hungrito is an innovative platform designed to revolutionize the dining experience by offering seamless online ordering and table booking services.",
-            " Built with a focus on user convenience, Hungrito allows customers to browse restaurant menus, place orders for delivery or pickup, and reserve tables at their favorite dining spots—all from a single, user-friendly interface.",
+            "Built with a focus on user convenience, Hungrito allows customers to browse restaurant menus, place orders for delivery or pickup, and reserve tables at their favorite dining spots—all from a single, user-friendly interface.",
             "The platform is designed to cater to both customers and restaurant owners, providing a streamlined solution that enhances operational efficiency while delivering a superior customer experience.",
-
         ],
     },
 ];
+
 
 const testimonials = [
     {

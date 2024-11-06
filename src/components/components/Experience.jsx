@@ -1,12 +1,12 @@
-import React from 'react'
-import { VerticalTimeline,VerticalTimelineElement } from 'react-vertical-timeline-component'
-import { motion } from 'framer-motion'
-import 'react-vertical-timeline-component/style.min.css'
+import React from 'react';
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import { motion } from 'framer-motion';
+import 'react-vertical-timeline-component/style.min.css';
 
-import { styles } from '../../style'
-import { experiences } from '../../constants'
-import { SectionWapper } from '../../hoc'
-import { textVariant } from '../../utils/motion'
+import { styles } from '../../style';
+import { experiences } from '../../constants';
+import { SectionWapper } from '../../hoc';
+import { textVariant } from '../../utils/motion';
 
 const ExperienceCard = ({ experience }) => {
   const handleCardClick = () => {
@@ -18,31 +18,28 @@ const ExperienceCard = ({ experience }) => {
       contentStyle={{
         background: "#1d1836",
         color: "#fff",
-        cursor: 'pointer'  // Make the card look clickable
+        cursor: 'pointer'
       }}
       contentArrowStyle={{ borderRight: "7px solid  #232631" }}
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
-      icon={
-        <div className='flex justify-center items-center w-full h-full'>
-          <img
-            src={experience.icon}
-            alt={experience.company_name}
-            className='w-[60%] h-[60%] object-contain'
-          />
-        </div>
-      }
     >
-      {/* Wrapped content in a div with onClick */}
       <div onClick={handleCardClick}>
         <div>
           <h3 className='text-white text-[24px] font-bold'>{experience.title}</h3>
-          <p
-            className='text-secondary text-[16px] font-semibold'
-            style={{ margin: 0 }}
-          >
-            {experience.technologies}
-          </p>
+          
+          {/* Render technology icons here */}
+          <div className="flex space-x-2 mt-2">
+            {Array.isArray(experience.technologies) && experience.technologies.map((tech, index) => (
+              <img 
+                key={`tech-icon-${index}`} 
+                src={tech.icon} 
+                alt={tech.name} 
+                title={tech.name}  // Tooltip for the technology name
+                className='w-6 h-6' 
+              />
+            ))}
+          </div>
         </div>
 
         <ul className='mt-5 list-disc ml-5 space-y-2'>
@@ -55,6 +52,11 @@ const ExperienceCard = ({ experience }) => {
             </li>
           ))}
         </ul>
+
+        {/* Instruction to click for project */}
+        <p className='text-secondary text-[14px] font-semibold mt-4'>
+          Click the card to view project
+        </p>
       </div>
     </VerticalTimelineElement>
   );
@@ -68,9 +70,8 @@ const Experience = () => {
           What I have done so far
         </p>
         <h2 className={`${styles.sectionHeadText} text-center`}>
-          PROJECTS
+          PROJECT
         </h2>
-        <p className={`${styles.sectionSubText} text-center`}>Click the cards below to view projects</p>
       </motion.div>
 
       <div className='mt-20 flex flex-col'>
