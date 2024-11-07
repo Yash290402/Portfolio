@@ -43,7 +43,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative w-full h-screen bg-gradient-to-b from-gray-800 to-black overflow-hidden flex items-center justify-center">
+    <section id="hero" className="relative w-full h-screen bg-gradient-to-b from-gray-800 to-black overflow-hidden flex items-center justify-center">
       {/* Loading Animation */}
       {loading && (
         <div className="absolute inset-0 flex items-center justify-center">

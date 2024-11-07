@@ -9,6 +9,7 @@ import {About,
   Works,
   StarsCanvas,
   Footer} from './components/components'
+import FloatingButton from "./components/components/FloatingButton"
 
 function App() {  
   return (
@@ -28,6 +29,9 @@ function App() {
         <Footer/>
       </div>
     </div>
+
+     {/* Floating Button */}
+     <FloatingButton/>{/* The button is visible on all pages */}
   </BrowserRouter>
   )
 }
