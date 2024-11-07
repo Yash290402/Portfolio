@@ -7,7 +7,8 @@ import {About,
   Navbar,
   Tech,
   Works,
-  StarsCanvas} from './components/components'
+  StarsCanvas,
+  Footer} from './components/components'
 
 function App() {  
   return (
@@ -24,6 +25,7 @@ function App() {
       <div className='relative z-0'>
         <Contact />
         <StarsCanvas />
+        <Footer/>
       </div>
     </div>
   </BrowserRouter>
