@@ -23,7 +23,7 @@ const Footer = () => {
         
         {/* Left Side - Name */}
         <motion.div
-          className="text-white font-extrabold text-xl mb-4 md:mb-0"
+          className="text-white font-medium text-xl mb-4 md:mb-0"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
