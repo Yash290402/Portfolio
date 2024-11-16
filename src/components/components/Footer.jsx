@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-400 py-8 px-6 relative">
+    <footer className="bg-gray-900 text-gray-400 py-8 px-4 sm:px-6 relative">
       
       {/* Wave Divider */}
       <div className="absolute inset-0 top-[-20px] bg-gradient-to-t from-gray-900 to-transparent h-8 opacity-80">
@@ -19,21 +19,21 @@ const Footer = () => {
         </svg>
       </div>
 
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
         
         {/* Left Side - Name */}
         <motion.div
-          className="text-white font-medium text-xl mb-4 md:mb-0"
+          className="text-white font-medium text-lg sm:text-xl mb-4 md:mb-0"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
         >
-          Yash Patel
+          Yash Patel | Full Stack 
         </motion.div>
 
         {/* Center - Navigation Links */}
         <motion.div
-          className="flex space-x-10 text-base font-small mb-4 md:mb-0"
+          className="flex flex-wrap justify-center md:justify-start space-x-4 sm:space-x-10 text-sm sm:text-base mb-4 md:mb-0"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
@@ -45,13 +45,13 @@ const Footer = () => {
 
         {/* Right Side - Social Links and Email */}
         <motion.div
-          className="flex space-x-6 items-center"
+          className="flex flex-col sm:flex-row items-center sm:space-x-6 space-y-4 sm:space-y-0"
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 1, duration: 1 }}
         >
           {/* LinkedIn Icon */}
-          <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="group text-gray-400 hover:text-white transition-colors">
+          <a href="https://www.linkedin.com/in/yash-patel-587622302/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="group text-gray-400 hover:text-white transition-colors">
             <motion.svg
               width="24"
               height="24"
@@ -63,7 +63,7 @@ const Footer = () => {
           </a>
 
           {/* GitHub Icon */}
-          <a href="https://github.com/your-profile" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="group text-gray-400 hover:text-white transition-colors">
+          <a href="https://github.com/Yash290402" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="group text-gray-400 hover:text-white transition-colors">
             <motion.svg
               width="24"
               height="24"
@@ -76,7 +76,7 @@ const Footer = () => {
 
           {/* Email */}
           <a href="mailto:your-email@example.com" className="text-gray-400 hover:text-white transition-colors text-sm">
-            your-email@example.com
+           yash56774@gmail.com
           </a>
         </motion.div>
       </div>
