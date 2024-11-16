@@ -13,6 +13,42 @@
   color-scheme: dark;
 }
 
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.service-card {
+  opacity: 0; 
+  transform: translateY(50px); 
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.hero-section {
+  background-image: url('public/public/use-svg-as-background-image-particle-strokes.svg'); /* Replace with your actual background image */
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+.heroHeadText {
+  font-size: 2rem;  /* Default size */
+}
+
+@media (max-width: 768px) {
+  .heroHeadText {
+    font-size: 1.5rem;  /* Adjusted for mobile */
+  }
+}
+
+
 .bg-gradient-to-r {
   background: linear-gradient(90deg, #1a1a2e, #16213e);
 }

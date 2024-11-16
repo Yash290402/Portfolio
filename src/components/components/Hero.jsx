@@ -1,123 +1,94 @@
-import { useState, useEffect, useMemo } from "react";
-import { motion } from "framer-motion";
+import React from 'react';
+import { useParallax } from 'react-scroll-parallax';
+import { motion } from 'framer-motion';
+import { styles } from '../../style';
+
+// Service card component
+const ServiceCard = ({ title, description, icon, gradientFrom, gradientTo }) => (
+  <motion.div
+    variants={{
+      initial: { opacity: 0, y: 30 },
+      animate: { opacity: 1, y: 0, transition: { duration: 0.6 } }, // Faster transition
+      whileHover: { scale: 1.05, boxShadow: "0 10px 20px rgba(0,0,0,0.2)", rotate: 2, transition: { duration: 0.2 } }, // Faster hover effect
+    }}
+    whileHover="whileHover"
+    className={`service-card bg-gradient-to-r from-${gradientFrom} to-${gradientTo} text-white rounded-lg p-6 shadow-lg transform hover:-translate-y-2 transition-all duration-300`}
+  >
+    <div className="icon mb-4 text-3xl bg-white bg-opacity-20 rounded-full p-4 inline-flex items-center justify-center">
+      {icon}
+    </div>
+    <h3 className="text-xl font-semibold mb-2">{title}</h3>
+    <p className="text-gray-200">{description}</p>
+  </motion.div>
+);
 
 const Hero = () => {
-  // State to track image loading status
-  const [loading, setLoading] = useState(true);
+  const parallax = useParallax({ speed: window.innerWidth > 768 ? -5 : 0 });
 
-  // Track the loading status of each image
-  const floatingImages = useMemo(() => [
-    { src: "src/assets/assets/tech/javascript.png", alt: "tech background 1", x: ["0%", "500%", "-50%"], y: ["0%", "120%", "-120%"] },
-    { src: "src/assets/assets/tech/nodejs.png", alt: "tech background 2", x: ["0%", "-500%", "150%"], y: ["0%", "-130%", "130%"] },
-    { src: "src/assets/assets/tech/reactjs.png", alt: "tech background 3", x: ["0%", "180%", "-90%"], y: ["0%", "-100%", "200%"] },
-    { src: "src/assets/assets/tech/redux.png", alt: "tech background 4", x: ["0%", "-200%", "170%"], y: ["0%", "20%", "-65%"] },
-    { src: "src/assets/assets/tech/git.png", alt: "tech background 5", x: ["0%", "-120%", "150%"], y: ["0%", "150%", "-120%"] },
-    { src: "src/assets/assets/tech/mongodb.png", alt: "tech background 6", x: ["0%", "120%", "-250%"], y: ["0%", "-250%", "120%"] },
-    { src: "src/assets/assets/tech/tailwind.png", alt: "tech background 7", x: ["0%", "80%", "-250%"], y: ["0%", "-250%", "80%"] },
-    { src: "src/assets/assets/tech/css.png", alt: "tech background 8", x: ["0%", "-150%", "-250%"], y: ["0%", "-250%", "150%"] },
-  ], []);
-
-  // Function to handle image load events
-  const handleImageLoad = () => {
-    // Check if all images are loaded, if yes, set loading to false
-    const loadedImages = floatingImages.filter(img => img.isLoaded).length;
-    if (loadedImages === floatingImages.length) {
-      setLoading(false);
-    }
+  // Motion variants for animation
+  const headingVariants = {
+    initial: { opacity: 0, y: 50 },
+    animate: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.5 } }, // Faster duration
   };
 
-  useEffect(() => {
-    // Mark images as not loaded initially
-    floatingImages.forEach((image) => image.isLoaded = false);
-  }, [floatingImages]);
-
-  const imageMotionConfig = {
-    initial: { x: "0%", y: "0%", scale: 1 },
-    animate: { scale: [1, 0.95, 1] },
-    transition: {
-      duration: 10,
-      repeat: Infinity,
-      repeatType: "loop",
-      ease: "easeInOut",
-    },
+  const paragraphVariants = {
+    initial: { opacity: 0, y: 30 },
+    animate: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 1 } }, // Faster duration
   };
 
   return (
-    <section id="hero" className="relative w-full h-screen bg-gradient-to-b from-gray-800 to-black overflow-hidden flex items-center justify-center">
-      {/* Loading Animation */}
-      {loading && (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="spinner-border animate-spin w-16 h-16 border-4 border-t-transparent border-indigo-500 rounded-full"></div>
-        </div>
-      )}
-
-      {/* Floating Background Images */}
+    <section
+      id="hero"
+      ref={parallax.ref}
+      className="hero-section bg-hero-pattern bg-cover bg-no-repeat bg-center min-h-screen flex flex-col items-center justify-center relative px-4 sm:px-6 md:px-10 lg:px-20"
+    >
+      {/* Hero Text */}
       <motion.div
-        className="absolute inset-0 flex items-center justify-center opacity-30"
-        style={{ pointerEvents: "none", willChange: "transform" }}
+        variants={headingVariants}
+        initial="initial"
+        animate="animate"
+        className="text-center text-white mb-6 sm:mb-8 md:mb-12"
       >
-        {floatingImages.map((image, index) => (
-          <motion.img
-            key={index}
-            src={image.src}
-            alt={image.alt}
-            className="absolute w-[150px] h-[150px] object-contain"
-            initial={imageMotionConfig.initial}
-            animate={{ ...imageMotionConfig.animate, x: image.x, y: image.y }}
-            transition={imageMotionConfig.transition}
-            loading="lazy"
-            onLoad={() => {
-              image.isLoaded = true;
-              handleImageLoad();
-            }}
-            style={{ willChange: "transform, opacity" }}
-          />
-        ))}
+        <h1 className={styles.heroHeadText}>Welcome to My Creative Space</h1>
+        <motion.p
+          variants={paragraphVariants}
+          initial="initial"
+          animate="animate"
+          className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 mt-2 sm:mt-4"
+        >
+          A blend of innovative design and technology to bring ideas to life.
+        </motion.p>
       </motion.div>
 
-      {/* Main Hero Content */}
-      {!loading && (
-        <div className="relative z-10 text-center max-w-lg mx-auto text-white">
-          {/* Title with Minimal Look */}
-          <motion.h1
-            className="text-5xl sm:text-6xl font-light tracking-tight"
-            initial={{ opacity: 1 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.5 }}
-          >
-            Hi, I'm <span className="font-semibold">Yash Patel</span>
-          </motion.h1>
-
-          {/* Subtitle with subtle animation */}
-          <motion.p
-            className="mt-6 text-lg sm:text-xl text-gray-300 font-light opacity-80"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.5, duration: 1.5 }}
-          >
-            Full-Stack Developer | Innovator | Problem Solver
-          </motion.p>
-
-          {/* Subtle Line */}
-          <motion.div
-            className="w-16 h-1 mt-6 bg-indigo-500 mx-auto"
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ delay: 1.5, duration: 1 }}
-          ></motion.div>
-
-          {/* Minimal Learn More Button */}
-          <motion.a
-            href="#about"
-            className="mt-10 inline-block py-2 px-6 bg-transparent border-2 border-indigo-500 text-indigo-500 font-semibold rounded-full hover:bg-indigo-500 hover:text-white transition-all duration-300"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2, duration: 1 }}
-          >
-            About Me
-          </motion.a>
-        </div>
-      )}
+      {/* Services Section */}
+      <motion.div
+        initial="initial"
+        animate="animate"
+        className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4 sm:px-8"
+      >
+        {/* Service Cards */}
+        <ServiceCard
+          title="Frontend Development"
+          description="Building modern, responsive, and user-friendly interfaces with React and other frontend technologies."
+          icon="💻"
+          gradientFrom="indigo-500"
+          gradientTo="purple-600"
+        />
+        <ServiceCard
+          title="Backend Development"
+          description="Developing efficient, secure backend systems with Node.js, Express, and databases like MongoDB and MySQL."
+          icon="⚙️"
+          gradientFrom="blue-500"
+          gradientTo="teal-600"
+        />
+        <ServiceCard
+          title="Database Management"
+          description="Creating and managing scalable, high-performance databases for efficient data handling."
+          icon="🗄️"
+          gradientFrom="green-500"
+          gradientTo="yellow-600"
+        />
+      </motion.div>
     </section>
   );
 };
