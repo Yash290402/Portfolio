@@ -2,36 +2,14 @@ import React from 'react';
 import { Tilt } from 'react-tilt';
 import { motion } from 'framer-motion';
 import { styles } from '../../style';
-import { services } from '../../constants';
+
 import { SectionWapper } from '../../hoc';
 import { fadeIn, textVariant } from '../../utils/motion';
 import { FaDownload } from 'react-icons/fa';
 
 
 const resumeLink = 'public/AIIE ICT 2021-25 YASH PATEL external.pdf';  // Replace with actual path
-const Profilepic ='/Profilepic.png'
-// const ServiceCard = ({ index, title, icon }) => (
-//   <Tilt className="w-full xs:w-[150px]">
-//     <motion.div
-//       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-//       className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
-//     >
-//       <div
-//         options={{
-//           max: 45,
-//           scale: 1,
-//           speed: 450,
-//         }}
-//         className="bg-tertiary rounded-[20px] py-4 px-6 min-h-[180px] flex justify-evenly items-center flex-col"
-//       >
-//         <img src={icon} alt={title} className="w-12 h-12 object-contain" />
-//         <h3 className="text-white text-[16px] font-bold text-center">
-//           {title}
-//         </h3>
-//       </div>
-//     </motion.div>
-//   </Tilt>
-// );
+const Profilepic ='public/Profilepic.png'
 
 const About = () => {
   return (
