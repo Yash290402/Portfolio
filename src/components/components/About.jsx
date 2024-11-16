@@ -9,7 +9,7 @@ import { FaDownload } from 'react-icons/fa';
 
 
 const resumeLink = 'public/AIIE ICT 2021-25 YASH PATEL external.pdf';  // Replace with actual path
-
+const Profilepic ='src/assets/assets/personal/Profilepic.jpeg'
 // const ServiceCard = ({ index, title, icon }) => (
 //   <Tilt className="w-full xs:w-[150px]">
 //     <motion.div
@@ -83,7 +83,7 @@ const About = () => {
         transition={{ duration: 0.8 }}
       >
         <Tilt className="rounded-full overflow-hidden shadow-lg w-48 h-48 md:w-60 md:h-60">
-          <img src="src/assets/assets/personal/Profilepic.jpeg" alt="Your Profile" className="w-full h-full object-cover" />
+          <img src={Profilepic} alt="Your Profile" className="w-full h-full object-cover" />
         </Tilt>
       </motion.div>
     </div>
