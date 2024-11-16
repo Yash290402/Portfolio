@@ -9,7 +9,7 @@ import { FaDownload } from 'react-icons/fa';
 
 
 const resumeLink = 'public/AIIE ICT 2021-25 YASH PATEL external.pdf';  // Replace with actual path
-const Profilepic ='src/assets/assets/personal/Profilepic.jpeg'
+const Profilepic ='public/Profilepic.png'
 // const ServiceCard = ({ index, title, icon }) => (
 //   <Tilt className="w-full xs:w-[150px]">
 //     <motion.div
