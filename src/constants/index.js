@@ -18,14 +18,20 @@ import {
     jobit,
     tripguide,
     threejs,
-    helpershands,
-    Verbalvibes,
-    imagenie,
-    hungrito,
+    
     
     c,
     java,
     GSAP,
+    express,
+    firebase,
+    htmlsvg,
+    js,
+    mongodbsvg,
+    nodesvg,
+    reactjssvg,
+    tailwindsvg,
+    csssvg
     
 } from "../assets/assets";
 
@@ -126,12 +132,12 @@ const experiences = [
     {
         title: "Helpers Hands",
         technologies: [
-            { name: "JavaScript", icon: "src/assets/assets/js.svg" },
-            { name: "React", icon: "src/assets/assets/react-js.svg" },
-            { name: "Node.js", icon: "src/assets/assets/node.svg" },
-            { name: "Express", icon: "src/assets/assets/express-js.svg" },
-            { name: "Tailwind", icon: "src/assets/assets/tailwind-css.svg" },
-            { name: "MongoDB", icon: "src/assets/assets/mongodb.svg" }
+            { name: "JavaScript", icon: js },
+            { name: "React", icon: reactjssvg },
+            { name: "Node.js", icon: nodesvg },
+            { name: "Express", icon: express },
+            { name: "Tailwind", icon: tailwindsvg },
+            { name: "MongoDB", icon:mongodbsvg }
         ],
         iconBg: "#383E56",
         icon: "src/assets/assets/company/helpers-hands.svg", // Add project logo here
@@ -145,9 +151,9 @@ const experiences = [
     {
         title: "VerbalVibes",
         technologies: [
-            { name: "React", icon: "src/assets/assets/react-js.svg" },
-            { name: "Tailwind", icon: "src/assets/assets/tailwind-css.svg" },
-            { name: "Firebase", icon: "src/assets/assets/firebase.svg" }
+            { name: "React", icon: reactjssvg},
+            { name: "Tailwind", icon: tailwindsvg },
+            { name: "Firebase", icon: firebase }
         ],
         icon: "src/assets/assets/helpers-hands-logo.svg", // Add project logo here
         // iconBg: "#E6DEDD",
@@ -162,12 +168,12 @@ const experiences = [
     {
         title: "ImaGenie",
         technologies: [
-            { name: "JavaScript", icon: "src/assets/assets/js.svg" },
-            { name: "React", icon: "src/assets/assets/react-js.svg" },
-            { name: "Tailwind", icon: "src/assets/assets/tailwind-css.svg" },
-            { name: "Node.js", icon: "src/assets/assets/node.svg" },
-            { name: "Express.js", icon: "src/assets/assets/express-js.svg" },
-            { name: "MongoDB", icon: "src/assets/assets/mongodb.svg" }
+            { name: "JavaScript", icon: js },
+            { name: "React", icon: reactjssvg },
+            { name: "Tailwind", icon:tailwindsvg },
+            { name: "Node.js", icon: nodesvg },
+            { name: "Express.js", icon: express },
+            { name: "MongoDB", icon:mongodbsvg }
         ],
         iconBg: "#383E56",
         icon: "src/assets/assets/company/imagenie.svg", // Add project logo here
@@ -181,12 +187,12 @@ const experiences = [
     {
         title: "Hungrito",
         technologies: [
-            { name: "HTML", icon: "src/assets/assets/html.svg" },
-            { name: "CSS", icon: "src/assets/assets/css.svg" },
-            { name: "JavaScript", icon: "src/assets/assets/js.svg" },
-            { name: "Node.js", icon: "src/assets/assets/node.svg" },
-            { name: "Express.js", icon: "src/assets/assets/express-js.svg" },
-            { name: "MongoDB", icon: "src/assets/assets/mongodb.svg" }
+            { name: "HTML", icon: htmlsvg },
+            { name: "CSS", icon:csssvg },
+            { name: "JavaScript", icon:js },
+            { name: "Node.js", icon: nodesvg },
+            { name: "Express.js", icon: express },
+            { name: "MongoDB", icon: mongodbsvg }
         ],
         // iconBg: "#E6DEDD",
         iconBg: "#383E56",

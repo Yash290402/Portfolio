@@ -1,4 +1,4 @@
-// import logo from "./logo.png";
+
 import backend from "./backend.png";
 import creator from "./creator.png";
 import mobile from "./mobile.png";
@@ -33,9 +33,20 @@ import hungrito from './company/hungrito.png';
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import csssvg from "./personal/css.svg";
+import express from "./personal/express-js.svg";
+import firebase from "./personal/firebase.svg";
+import herobg from "./personal/herobg.png";
+import htmlsvg from "./personal/html.svg";
+import js from "./personal/js.svg";
+import mongodbsvg from "./personal/mongodb.svg";
+import nodesvg from "./personal/node.svg";
+import reactjssvg from "./personal/react-js.svg";
+import tailwindsvg from "./personal/tailwind-css.svg";
+
 
 export {
-  // logo,
+  
   backend,
   creator,
   mobile,
@@ -67,4 +78,15 @@ export {
   imagenie,
   Verbalvibes,
   hungrito,
+  express,
+  firebase,
+  herobg,
+  htmlsvg,
+  js,
+  mongodbsvg,
+  nodesvg,
+  reactjssvg,
+  tailwindsvg,
+  csssvg
+ 
 };
