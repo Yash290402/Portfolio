@@ -40,7 +40,10 @@ const Hero = () => {
     <section
       id="hero"
       ref={parallax.ref}
-      className="hero-section bg-hero-pattern bg-cover bg-no-repeat bg-center min-h-screen flex flex-col items-center justify-center relative px-4 sm:px-6 md:px-10 lg:px-20"
+      className="hero-section bg-cover bg-no-repeat bg-center min-h-screen flex flex-col items-center justify-center relative px-4 sm:px-6 md:px-10 lg:px-20"
+      style={{
+        backgroundImage: "url('public/use-svg-as-background-image-particle-strokes.svg')",
+      }}
     >
       {/* Hero Text */}
       <motion.div
