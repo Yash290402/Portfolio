@@ -1,40 +1,35 @@
 import React from 'react';
 import { useParallax } from 'react-scroll-parallax';
 import { motion } from 'framer-motion';
+import { FaArrowDown } from 'react-icons/fa';
 import { styles } from '../../style';
-
-// Service card component
-const ServiceCard = ({ title, description, icon, gradientFrom, gradientTo }) => (
-  <motion.div
-    variants={{
-      initial: { opacity: 0, y: 30 },
-      animate: { opacity: 1, y: 0, transition: { duration: 0.6 } }, // Faster transition
-      whileHover: { scale: 1.05, boxShadow: "0 10px 20px rgba(0,0,0,0.2)", rotate: 2, transition: { duration: 0.2 } }, // Faster hover effect
-    }}
-    whileHover="whileHover"
-    className={`service-card bg-gradient-to-r from-${gradientFrom} to-${gradientTo} text-white rounded-lg p-6 shadow-lg transform hover:-translate-y-2 transition-all duration-300`}
-  >
-    <div className="icon mb-4 text-3xl bg-white bg-opacity-20 rounded-full p-4 inline-flex items-center justify-center">
-      {icon}
-    </div>
-    <h3 className="text-xl font-semibold mb-2">{title}</h3>
-    <p className="text-gray-200">{description}</p>
-  </motion.div>
-);
+import { services } from '../../constants';
+import { Tilt } from 'react-tilt';
+import { fadeIn } from '../../utils/motion';
 
 const Hero = () => {
   const parallax = useParallax({ speed: window.innerWidth > 768 ? -5 : 0 });
 
-  // Motion variants for animation
-  const headingVariants = {
-    initial: { opacity: 0, y: 50 },
-    animate: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.5 } }, // Faster duration
-  };
-
-  const paragraphVariants = {
-    initial: { opacity: 0, y: 30 },
-    animate: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 1 } }, // Faster duration
-  };
+  const ServiceCard = ({ index, title, icon }) => (
+    <Tilt className="w-full">
+      <motion.div
+        variants={fadeIn("right", "spring", index * 0.5, 0.75)}
+        className="w-full green-pink-gradient p-[2px] rounded-[15px] shadow-card"
+      >
+        <div
+          options={{
+            max: 45,
+            scale: 1,
+            speed: 450,
+          }}
+          className="bg-tertiary rounded-[15px] py-6 px-8 min-h-[200px] flex justify-evenly items-center flex-col"
+        >
+          <img src={icon} alt={title} className="w-16 h-16 object-contain" />
+          <h3 className="text-white text-[18px] font-bold text-center">{title}</h3>
+        </div>
+      </motion.div>
+    </Tilt>
+  );
 
   return (
     <section
@@ -43,55 +38,46 @@ const Hero = () => {
       className="hero-section bg-cover bg-no-repeat bg-center min-h-screen flex flex-col items-center justify-center relative px-4 sm:px-6 md:px-10 lg:px-20"
       style={{
         backgroundImage: "url('public/use-svg-as-background-image-particle-strokes.svg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
       }}
     >
       {/* Hero Text */}
       <motion.div
-        variants={headingVariants}
-        initial="initial"
-        animate="animate"
-        className="text-center text-white mb-6 sm:mb-8 md:mb-12"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-center text-white mb-8 max-w-[90%] sm:max-w-[75%] lg:max-w-[60%]"
       >
-        <h1 className={styles.heroHeadText}>Welcome to My Creative Space</h1>
-        <motion.p
-          variants={paragraphVariants}
-          initial="initial"
-          animate="animate"
-          className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 mt-2 sm:mt-4"
-        >
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold">
+          Welcome to My Creative Space
+        </h1>
+        <p className="text-gray-300 mt-4 text-sm sm:text-base md:text-lg lg:text-xl whitespace-nowrap overflow-hidden text-ellipsis">
           A blend of innovative design and technology to bring ideas to life.
-        </motion.p>
+        </p>
       </motion.div>
 
-      {/* Services Section */}
-      <motion.div
-        initial="initial"
-        animate="animate"
-        className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4 sm:px-8"
+      {/* Dropdown Arrow Icon with Animation (Hidden on Mobile) */}
+      <a
+        href="#services"
+        className="absolute bottom-10 hidden sm:block animate-bounce"
       >
-        {/* Service Cards */}
-        <ServiceCard
-          title="Frontend Development"
-          description="Building modern, responsive, and user-friendly interfaces with React and other frontend technologies."
-          icon="💻"
-          gradientFrom="indigo-500"
-          gradientTo="purple-600"
-        />
-        <ServiceCard
-          title="Backend Development"
-          description="Developing efficient, secure backend systems with Node.js, Express, and databases like MongoDB and MySQL."
-          icon="⚙️"
-          gradientFrom="blue-500"
-          gradientTo="teal-600"
-        />
-        <ServiceCard
-          title="Database Management"
-          description="Creating and managing scalable, high-performance databases for efficient data handling."
-          icon="🗄️"
-          gradientFrom="green-500"
-          gradientTo="yellow-600"
-        />
-      </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-white text-4xl"
+        >
+          <FaArrowDown />
+        </motion.div>
+      </a>
+
+      {/* Service Cards Section (Hidden on Mobile) */}
+      <div className="mt-10 hidden sm:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full">
+        {services.map((service, index) => (
+          <ServiceCard key={service.title} index={index} {...service} />
+        ))}
+      </div>
     </section>
   );
 };

@@ -9,11 +9,12 @@ import { FaDownload } from 'react-icons/fa';
 
 
 const resumeLink = 'public/AIIE ICT 2021-25 YASH PATEL external.pdf';  // Replace with actual path
-const Profilepic ='public/Profilepic.png'
+const Profilepic = 'public/Profilepic.png'
 
 const About = () => {
   return (
-    <div className="flex flex-col md:flex-row justify-between items-start gap-10">
+    <div id="about"
+      className="flex flex-col md:flex-row justify-between items-start gap-10">
       {/* Left Section - About Text and Skills */}
       <motion.div variants={textVariant()} className="flex-1">
         <p className={`${styles.sectionSubText} text-6xl font-bold`}>Introduction</p>
@@ -22,11 +23,11 @@ const About = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
-          I'm a skilled software developer with experience in 
-          <span className="text-2xl font-normal text-[#915EFF]"> JavaScript</span> and 
-          expertise in frameworks like 
-          <span className="text-2xl font-normal text-[#915EFF]"> React.js</span>, 
-          <span className="text-2xl font-normal text-[#915EFF]"> Node.js</span>, and 
+          I'm a skilled software developer with experience in
+          <span className="text-2xl font-normal text-[#915EFF]"> JavaScript</span> and
+          expertise in frameworks like
+          <span className="text-2xl font-normal text-[#915EFF]"> React.js</span>,
+          <span className="text-2xl font-normal text-[#915EFF]"> Node.js</span>, and
           <span className="text-2xl font-normal text-[#915EFF]"> Express.js</span>. I'm a quick learner and collaborate closely with clients to
           create efficient, scalable, and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!
         </motion.p>

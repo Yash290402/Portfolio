@@ -9,28 +9,28 @@ import { fadeIn } from '../../utils/motion';
 import { styles } from '../../style';
 
 // ServiceCard Component
-const ServiceCard = ({ index, title, icon }) => (
-  <Tilt className="w-full">
-    <motion.div
-      variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-      className="w-full green-pink-gradient p-[2px] rounded-[20px] shadow-card"
-    >
-      <div
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className="bg-tertiary rounded-[20px] py-8 px-10 min-h-[250px] flex justify-evenly items-center flex-col"
-      >
-        <img src={icon} alt={title} className="w-20 h-20 object-contain" />
-        <h3 className="text-white text-[22px] font-bold text-center">
-          {title}
-        </h3>
-      </div>
-    </motion.div>
-  </Tilt>
-);
+// const ServiceCard = ({ index, title, icon }) => (
+//   <Tilt className="w-full">
+//     <motion.div
+//       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
+//       className="w-full green-pink-gradient p-[2px] rounded-[20px] shadow-card"
+//     >
+//       <div
+//         options={{
+//           max: 45,
+//           scale: 1,
+//           speed: 450,
+//         }}
+//         className="bg-tertiary rounded-[20px] py-8 px-10 min-h-[250px] flex justify-evenly items-center flex-col"
+//       >
+//         <img src={icon} alt={title} className="w-20 h-20 object-contain" />
+//         <h3 className="text-white text-[22px] font-bold text-center">
+//           {title}
+//         </h3>
+//       </div>
+//     </motion.div>
+//   </Tilt>
+// );
 
 const Tech = () => {
   return (
@@ -44,13 +44,6 @@ const Tech = () => {
           <div className='w-28 h-28' key={technology.name}>
             <BallCanvas icon={technology.icon} />
           </div>
-        ))}
-      </div>
-
-      {/* Service Cards Section */}
-      <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 w-full"> {/* Increased margin from mt-10 to mt-16 */}
-        {services.map((service, index) => (
-          <ServiceCard key={service.title} index={index} {...service} />
         ))}
       </div>
     </>
