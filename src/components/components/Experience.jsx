@@ -35,16 +35,16 @@ const ExperienceCard = ({ experience }) => {
       <div onClick={handleCardClick}>
         <div>
           <h3 className='text-white text-[24px] font-bold'>{experience.title}</h3>
-          
+
           {/* Render technology icons here */}
           <div className="flex space-x-2 mt-2">
             {Array.isArray(experience.technologies) && experience.technologies.map((tech, index) => (
-              <img 
-                key={`tech-icon-${index}`} 
-                src={tech.icon} 
-                alt={tech.name} 
+              <img
+                key={`tech-icon-${index}`}
+                src={tech.icon}
+                alt={tech.name}
                 title={tech.name}  // Tooltip for the technology name
-                className='w-6 h-6' 
+                className='w-6 h-6'
               />
             ))}
           </div>
@@ -74,7 +74,8 @@ const Experience = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} text-center`}>
+        <p id="experience" 
+        className={`${styles.sectionSubText} text-center`}>
           What I have done so far
         </p>
         <h2 className={`${styles.sectionHeadText} text-center`}>
@@ -82,7 +83,8 @@ const Experience = () => {
         </h2>
       </motion.div>
 
-      <div className='mt-20 flex flex-col'>
+      <div 
+        className='mt-20 flex flex-col'>
         <VerticalTimeline>
           {experiences.map((experience, index) => (
             <ExperienceCard

@@ -28,7 +28,7 @@ const Footer = () => {
           transition={{ duration: 1 }}
         >
           Yash Patel
-          <p className="text-sm text-gray-400">Full Stack Developer & Creative Coder</p>
+          <p className="text-sm text-gray-400">Full Stack Developer</p>
         </motion.div>
 
         {/* Navigation Links */}
@@ -41,7 +41,7 @@ const Footer = () => {
           <a href="#about" className="hover:text-white transition-all">
             About
           </a>
-          <a href="#projects" className="hover:text-white transition-all">
+          <a href="#experience" className="hover:text-white transition-all">
             Projects
           </a>
           <a href="#contact" className="hover:text-white transition-all">
