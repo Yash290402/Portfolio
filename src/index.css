@@ -4,6 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 * {
   margin: 0;
   padding: 0;
@@ -25,11 +26,11 @@
   transition: transform 0.5s ease-out, opacity 0.5s ease-out;
 }
 
-.hero-section {
-  background-image: url('public/public/use-svg-as-background-image-particle-strokes.svg'); /* Replace with your actual background image */
+/* .hero-section {
+  background-image: url('public/public/use-svg-as-background-image-particle-strokes.svg');
   background-size: cover;
   background-position: center;
-}
+} */
 
 .hero-section {
   display: flex;

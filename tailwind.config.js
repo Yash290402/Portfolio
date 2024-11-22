@@ -24,6 +24,11 @@ module.exports = {
       animation: {
         "spin-slow": "spin 20s linear infinite",
       },
+      fontFamily: {
+        doto: ['Doto', 'sans-serif'],
+        signika: ['Signika Negative', 'sans-serif'],
+        teko: ['Teko', 'sans-serif'],
+      },
     },
   },
   plugins: [],

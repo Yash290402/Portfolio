@@ -6,6 +6,7 @@ import { styles } from '../../style';
 import { services } from '../../constants';
 import { Tilt } from 'react-tilt';
 import { fadeIn } from '../../utils/motion';
+import { StarsCanvas } from './canvas';
 
 const Hero = () => {
   const [showText, setShowText] = useState(true);
@@ -57,13 +58,11 @@ const Hero = () => {
     <section
       id="hero"
       ref={parallax.ref}
-      className="hero-section bg-cover bg-no-repeat bg-center min-h-screen flex flex-col items-center justify-center relative px-4 sm:px-6 md:px-10 lg:px-20"
-      style={{
-        backgroundImage: "url('public/use-svg-as-background-image-particle-strokes.svg')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
+      className="hero-section min-h-screen flex flex-col items-center justify-center relative px-4 sm:px-6 md:px-10 lg:px-20"
     >
+      {/* Add StarsCanvas as background */}
+     <StarsCanvas/>
+
       {/* Hero Text */}
       {showText && (
         <motion.div
@@ -72,18 +71,17 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
           className="text-center text-white mb-8 max-w-[90%] sm:max-w-[75%] lg:max-w-[60%]"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold font-teko">
             Welcome to My Creative Space
           </h1>
           <p className="text-gray-300 mt-4 text-sm sm:text-base md:text-lg lg:text-xl whitespace-nowrap overflow-hidden text-ellipsis">
-            A blend of innovative design and technology to bring ideas to life.
+            Full stack developer | MERN stack Enthushing
           </p>
         </motion.div>
       )}
 
       {/* Dropdown Arrow Icon (Hidden on Mobile) */}
-      <a href="#services"
-        className="absolute bottom-10 sm:animate-bounce">
+      <a href="#services" className="absolute bottom-10 sm:animate-bounce">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
