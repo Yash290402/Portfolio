@@ -66,7 +66,7 @@ const services = [
         icon: backend,
     },
     {
-        title: "knowledge about Database like MongoDB,MySQL...",
+        title: "Database Management",
         icon: creator,
     },
 ];
