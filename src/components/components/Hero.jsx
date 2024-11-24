@@ -71,8 +71,7 @@ const Hero = () => {
       ref={parallax.ref}
       className="hero-section min-h-screen flex flex-col items-center justify-center relative px-4 sm:px-6 md:px-10 lg:px-20"
     >
-      {/* Add StarsCanvas as background */}
-      <StarsCanvas />
+      
 
       {/* Hero Text */}
       {showText && (

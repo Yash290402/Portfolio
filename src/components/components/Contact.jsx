@@ -148,7 +148,7 @@ const Contact = () => {
               onChange={handleChange}
               className='accent-primary'
             />
-            <span className='text-white font-medium'>I agree all the terms and condition</span>
+            <span className='text-white font-medium'>Agree all terms and condition</span>
           </label>
 
           <button

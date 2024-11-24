@@ -20,10 +20,13 @@ function App() {
     <ParallaxProvider>
       <BrowserRouter>
         <div className="relative z-0 bg-primary">
-          <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
-            <Navbar />
-            <Hero />
-         
+          {/* Hero Section with StarsCanvas */}
+          <div className="relative">
+            <StarsCanvas />
+            <div className="relative z-10 bg-hero-pattern bg-cover bg-no-repeat bg-center">
+              <Navbar />
+              <Hero />
+            </div>
           </div>
           <About />
           <Tech />
