@@ -14,20 +14,33 @@ import {
   
 } from "./components/components";
 import FloatingButton from "./components/components/FloatingButton";
+import { useEffect, useState } from "react";
 
 function App() {  
+
+  const [isCanvasSupported, setIsCanvasSupported] = useState(true);
+
+  useEffect(() => {
+    // Check if the browser supports Canvas
+    const canvas = document.createElement("canvas");
+    if (!canvas.getContext || window.innerWidth < 640) {
+      setIsCanvasSupported(false); // Disable StarsCanvas for unsupported cases or small screens
+    }
+  }, []);
+
   return (
     <ParallaxProvider>
       <BrowserRouter>
         <div className="relative z-0 bg-primary">
-          {/* Hero Section with StarsCanvas */}
-          <div className="relative">
-            <StarsCanvas />
+          {/* Hero Section */}
+          <div className={`relative ${isCanvasSupported ? '' : 'bg-fallback-pattern'}`}>
+            {isCanvasSupported && <StarsCanvas />} {/* Render StarsCanvas only if supported */}
             <div className="relative z-10 bg-hero-pattern bg-cover bg-no-repeat bg-center">
               <Navbar />
               <Hero />
             </div>
           </div>
+          
           <About />
           <Tech />
           <Experience />
