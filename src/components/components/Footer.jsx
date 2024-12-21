@@ -103,7 +103,7 @@ const Footer = () => {
           </a>
 
           {/* Gmail */}
-          <a
+          {/* <a
             href="mailto:yash56774@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -124,7 +124,7 @@ const Footer = () => {
                 <path d="M20,3H4C2.9,3,2,3.9,2,5v14c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V5C22,3.9,21.1,3,20,3z M20,5l-8,5L4,5H20z M4,19V7l8,5 l8-5v12H4z" />
               </svg>
             </motion.div>
-          </a>
+          </a> */}
         </motion.div>
       </div>
 
