@@ -111,7 +111,7 @@ const Hero = () => {
       )}
 
       {/* Dropdown Arrow Icon */}
-      <a href="#services" className="absolute bottom-10 sm:animate-bounce">
+      <a href="#about" className="absolute bottom-10 sm:animate-bounce">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
